@@ -1,0 +1,14 @@
+- brains:
+  - name: brainMemGPT
+    type: memgpt # cli, remote, https, rpc,  
+    endpoint: http://localhost:8283
+    admin_token: my_memgpt_admin_token
+    user_file: user1.yaml
+  - name: brainAutoGen
+    type: dummy
+    foo: bar
+    baz: qux
+  - name: brainCrewAi
+    type: dummy
+    foo: bar
+    baz: qux

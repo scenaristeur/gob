@@ -15,12 +15,6 @@ C'est l'agencement de ces entités, leurs connexions et les ressources auxquelle
 
 
 
-
-
-
-
-
-
 # install
 
 - requirements : Python (tested with 3.10.12)
@@ -47,18 +41,29 @@ pip install -r requirements.txt
 # memgpt configure
 
 export MEMGPT_SERVER_PASS=ilovellms
-memgpt server
+memgpt server # memgpt server --debug
 
 ```
 
 
 # run 
+- once gob is installed and services like memGPT operationnels
 ```bash 
+cd gob
 python main.py
 ```
 
 
+# db access
+for dockerized memgpt postgresql
+```
+psql  -U memgpt --host localhost
+\c memgpt
+\d+ agents
 
+## !!! supprimer tous les agents : DELETE FROM agents; 
+
+```
 
 
 

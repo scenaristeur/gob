@@ -1,14 +1,29 @@
 - brains:
-  - name: brainMemGPT
+  - name: brainMemGPT_One
     type: memgpt # cli, remote, https, rpc,  
     endpoint: http://localhost:8283
-    admin_token: my_memgpt_admin_token
-    user_file: user1.yaml
-  - name: brainAutoGen
-    type: dummy
-    foo: bar
-    baz: qux
-  - name: brainCrewAi
-    type: dummy
-    foo: bar
-    baz: qux
+    admin_token: ilovellms
+    user_file: user5.yaml
+    human_name: User One
+    human_description: User One est un ado de 15 ans. fan de jeux videos
+    persona_name: Mme Block
+    persona_description: Mme Block est une institutrice
+    agent_name: Ecole #A l'ecole
+  - name: brainMemGPT Two
+    type: memgpt # cli, remote, https, rpc,  
+    endpoint: http://localhost:8283
+    admin_token: ilovellms
+    user_file: user6.yaml
+    human_name: User_Two
+    human_description: User Two est un entrepreneur qui a une idée de réseau social basé sur la proximité géographique et a besoin d'une application mobile
+    persona_name: Bob_Le_Dev
+    persona_description: Bob Le Dev est un développeur javascript, VueJs, PWA
+    agent_name: Appli #Création d'une appli
+  # - name: brainAutoGen
+  #   type: dummy
+  #   foo: bar
+  #   baz: qux
+  # - name: brainCrewAi
+  #   type: dummy
+  #   foo: bar
+  #   baz: qux

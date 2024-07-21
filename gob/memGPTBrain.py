@@ -52,13 +52,14 @@ class memGPTBrain:
         # print("AGENT STATE", self.agent)
         self.agents = self.client.list_agents().agents
         print("Agents", type(self.agents), self.agents[0]['id'])
-        message = "Quel est le sens de la vie ? Qu'elqu'un m'a dit que c'était 42..."
-        
+        #message = "Quel est le sens de la vie ? Quelqu'un m'a dit que c'était 42..."
+        #message = "Bonjour, qui es-tu ?"
 
+        self.agent_id = self.agents[0]['id']
         # BUG !!       
         # there is a bug with agent_id, should be self.agent_state.id
-        response =self.sendMessage(self.agents[0]['id'],message)
-        print(f"RESPONSE : {response}")
+        # response =self.sendMessage(message)
+        # print(f"RESPONSE : {response}")
 
     def Human(self):
         # https://github.com/cpacker/MemGPT/blob/634c642aef290f8648636a3ac23a973d3a20ae17/memgpt/client/client.py#L501
@@ -148,7 +149,7 @@ class memGPTBrain:
     #     return self.client.create_data_sources(
     #         agent_id=self.agent.agent_id
 
-    def sendMessage(self, agent_id, message):
+    def sendMessage(self,  message):
         # message_data = {
         #     "agent_id": self.agent_state.id,
         #     "message": "what's the meaning of life? someone told me it's 42...",
@@ -157,7 +158,7 @@ class memGPTBrain:
         # }
         # self.client.send_message(agent_id=self.agent_state.name, message=message)
         return self.client.user_message(
-            agent_id=agent_id,
+            agent_id=self.agent_id,
             message=message,
         )
 

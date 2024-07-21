@@ -6,6 +6,7 @@ class Brain:
         self.connexion = self.connect(self.config)
 
 
+
     def connect(self, config):
         print(f"{config['name']} : Connexion ... {config['type']}")
         if config['type'] == "memgpt":
@@ -18,3 +19,6 @@ class Brain:
 
         else:
             raise ValueError(f"{config['name']} : Unknown type of brain")
+    
+    def get(self):
+        return self.connexion
